@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-padding: 20; -fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.converter.controllers.XmlToJsonController">
+   
+   <top>
+      <VBox alignment="CENTER" prefHeight="107.0" prefWidth="860.0" style="-fx-spacing: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-font-size: 33; -fx-font-weight: bold; -fx-text-fill: #58a0e8;" text="Conversion XML → JSON" />
+            
+            <HBox fx:id="configInfoBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;">
+               <children>
+                  <Label style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #0b3c6e;" text="Méthode :" />
+                  <Label fx:id="methodLabel" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 22;" text="Native" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 10; -fx-padding: 10 0 10 0;" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-font-weight: bold; -fx-font-size: 20;" text="Code XML d'entrée :" />
+            
+            <TextArea prefHeight="300.0" prefWidth="200.0" promptText="Entrez votre code XML ici ou chargez un fichier..." fx:id="xmlInputArea" />
+            
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="860.0" style="-fx-spacing: 10;">
+               <children>
+                  <Button fx:id="loadFileButton" mnemonicParsing="false" onAction="#handleLoadFile" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 8 15;" text="📁 Charger Fichier XML" />
+                  
+                  <Button fx:id="validateButton" mnemonicParsing="false" onAction="#handleValidate" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-padding: 8 15;" text="✓ Valider XML" />
+                  
+                  <Button fx:id="convertButton" disable="true" mnemonicParsing="false" onAction="#handleConvert" style="-fx-background-color: #27ae60; -fx-padding: 8 15; -fx-text-fill: white; -fx-font-weight: bold;" text="⚡ Convertir" />
+                  <Button fx:id="clearInputButton" disable="true" mnemonicParsing="false" onAction="#handleClearInput" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-padding: 8 15;" text="🗑 Effacer" />
+               </children>
+            </HBox>
+            
+            <Label fx:id="validationStatusLabel" style="-fx-text-fill: #7f8c8d; -fx-font-style: italic;" text="Statut : En attente de validation" />
+            
+            <Separator prefWidth="200.0" />
+            
+            <Label style="-fx-font-weight: bold; -fx-font-size: 20;" text="Résultat JSON :" />
+            
+            <TextArea fx:id="jsonOutputArea" editable="false" prefHeight="300.0" prefWidth="200.0" style="-fx-control-inner-background: #ecf0f1;" />
+         </children>
+      </VBox>
+   </center>
+   
+   <bottom>
+      <HBox prefHeight="51.0" prefWidth="860.0" style="-fx-spacing: 10; -fx-padding: 10 0 0 0;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBack" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-padding: 8 20;" text="← Retour" />
+            
+            <Region prefHeight="41.0" prefWidth="450.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Region>
+            <Button fx:id="copyOutputButton" disable="true" mnemonicParsing="false" onAction="#handleCopyOutput" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-padding: 8 20;" text=" 📋 Copier" HBox.hgrow="ALWAYS" />
+            
+            <Button fx:id="downloadButton" disable="true" mnemonicParsing="false" onAction="#handleDownload" prefHeight="33.0" prefWidth="159.0" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-padding: 8 20;" text="💾 Télécharger JSON" />
+         </children>
+      </HBox>
+   </bottom>
+
+</BorderPane>

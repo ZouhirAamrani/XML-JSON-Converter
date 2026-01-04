@@ -1,0 +1,221 @@
+/* ===== Styles généraux ===== */
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Labels ===== */
+.label {
+    -fx-text-fill: #333333;
+}
+
+.label-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ===== Boutons ===== */
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+    -fx-font-size: 13px;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-background-color: #004085;
+}
+
+.button:disabled {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #666666;
+    -fx-cursor: default;
+    -fx-opacity: 0.6;
+}
+
+/* Boutons spécifiques */
+#loadFileButton {
+    -fx-background-color: #3498db;
+}
+
+#loadFileButton:hover {
+    -fx-background-color: #2980b9;
+}
+
+#validateButton {
+    -fx-background-color: #f39c12;
+}
+
+#validateButton:hover {
+    -fx-background-color: #e67e22;
+}
+
+#convertButton {
+    -fx-background-color: #27ae60;
+    -fx-font-weight: bold;
+}
+
+#convertButton:hover {
+    -fx-background-color: #229954;
+}
+
+#downloadButton {
+    -fx-background-color: #8e44ad;
+}
+
+#downloadButton:hover {
+    -fx-background-color: #7d3c98;
+}
+
+#backButton {
+    -fx-background-color: #95a5a6;
+}
+
+#backButton:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+#continueButton {
+    -fx-background-color: #27ae60;
+    -fx-font-size: 14px;
+    -fx-padding: 10 30;
+    -fx-font-weight: bold;
+}
+
+#continueButton:hover {
+    -fx-background-color: #229954;
+}
+
+/* ===== RadioButtons ===== */
+.radio-button {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #007bff;
+}
+
+.radio-button .radio {
+    -fx-background-radius: 1em;
+    -fx-padding: 0.166667em;
+}
+
+/* ===== TextArea ===== */
+.text-area {
+    -fx-font-family: "Courier New", "Consolas", monospace;
+    -fx-font-size: 12px;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+}
+
+/* TextArea de sortie (lecture seule) */
+#jsonOutputArea .content,
+#xmlOutputArea .content {
+    -fx-background-color: #ecf0f1;
+}
+
+/* ===== Séparateurs ===== */
+.separator {
+    -fx-background-color: #bdc3c7;
+}
+
+.separator .line {
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* ===== VBox et HBox ===== */
+.vbox, .hbox {
+    -fx-background-color: transparent;
+}
+
+/* ===== BorderPane ===== */
+.border-pane {
+    -fx-background-color: #f4f4f4;
+}
+
+/* ===== Labels de statut ===== */
+#validationStatusLabel {
+    -fx-font-size: 13px;
+    -fx-padding: 5 0;
+}
+
+#methodLabel {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* ===== ScrollBar ===== */
+.scroll-bar {
+    -fx-background-color: #f4f4f4;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #95a5a6;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* ===== Info Box ===== */
+#configInfoBox {
+    -fx-background-color: #e8f4f8;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5;
+}
+
+/* Bouton Effacer */
+#clearInputButton {
+    -fx-background-color: #e74c3c;
+}
+
+#clearInputButton:hover {
+    -fx-background-color: #c0392b;
+}
+
+#clearInputButton:disabled {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #666666;
+    -fx-opacity: 0.6;
+}
+
+/* Bouton Copier */
+#copyOutputButton {
+    -fx-background-color: #16a085;
+}
+
+#copyOutputButton:hover {
+    -fx-background-color: #138d75;
+}
+
+#copyOutputButton:disabled {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #666666;
+    -fx-opacity: 0.6;
+}

@@ -1,0 +1,99 @@
+/* ==================================================================
+   GLOBAL ET ROOT
+   ================================================================== */
+.root {
+    -fx-background-color: #f4f4f4; /* Gris très clair, doux pour les yeux */
+    -fx-font-family: 'Segoe UI', sans-serif; /* Police moderne */
+}
+
+/* ==================================================================
+   LABELS (TITRES ET TEXTES)
+   ================================================================== */
+/* Le grand titre en haut */
+.label {
+    -fx-text-fill: #3a57e0; /* Gris foncé par défaut */
+}
+
+/* On cible spécifiquement le titre s'il a une classe, 
+   mais ici on va cibler tous les labels dans le 'top' via le FXML */
+.top-title {
+    -fx-text-fill: #3a57e0;
+}
+
+/* Les sous-titres (Choisissez le type...) */
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3a57e0;
+}
+
+/* ==================================================================
+   RADIO BUTTONS
+   ================================================================== */
+.radio-button {
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-text-fill: #555555;
+    -fx-padding: 5px;
+}
+
+/* Effet au survol de la souris */
+.radio-button:hover {
+    -fx-text-fill: #58a0e8; /* Le texte devient bleu */
+}
+
+/* Personnalisation du rond (le cercle extérieur) */
+.radio-button .radio {
+    -fx-border-width: 2px;
+    -fx-border-color: #bdc3c7;
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+/* Quand le bouton est sélectionné : bordure bleue */
+.radio-button:selected .radio {
+    -fx-border-color: #58a0e8;
+    -fx-background-color: white;
+}
+
+/* Le point à l'intérieur (le dot) */
+.radio-button:selected .dot {
+    -fx-background-color: #58a0e8;
+    -fx-background-insets: 0;
+}
+
+/* ==================================================================
+   SEPARATEUR
+   ================================================================== */
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: #060f3b; 
+}
+
+/* ==================================================================
+   BOUTON CONTINUER (#continueButton)
+   ================================================================== */
+#continueButton {
+    -fx-background-color: #58a0e8; /* Bleu principal */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-radius: 5px; /* Coins arrondis */
+    -fx-padding: 10px 40px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-transition: all 0.3s;
+}
+
+#continueButton:hover {
+    -fx-background-color: #4a8ac0; /* Bleu un peu plus foncé */
+    -fx-scale-x: 1.02; /* Légère grossissement */
+    -fx-scale-y: 1.02;
+}
+
+#continueButton:pressed {
+    -fx-background-color: #2c3e50;
+    -fx-effect: none;
+}
