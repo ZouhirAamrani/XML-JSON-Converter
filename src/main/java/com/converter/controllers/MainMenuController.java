@@ -72,7 +72,7 @@ public class MainMenuController implements Initializable {
                 JsonToXmlController controller = loader.getController();
                 controller.setConfig(config);
             }
-        
+            
             Stage stage = (Stage) xmlToJsonRadio.getScene().getWindow();
             Scene scene = new Scene(root, 900, 650);
             scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());

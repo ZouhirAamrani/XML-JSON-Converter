@@ -20,17 +20,32 @@ public class JacksonJsonToXmlConverter implements IConverter {
     @Override
     public ConversionResult convert(String jsonInput) throws Exception {
         try {
-            // Lire le JSON et le convertir en JsonNode
             JsonNode jsonNode = jsonMapper.readTree(jsonInput);
-            
-            // Convertir JsonNode en XML String
-            String xmlOutput = xmlMapper.writerWithDefaultPrettyPrinter()
-                                        .writeValueAsString(jsonNode);
+            String xmlOutput;
+
+            // Le JSON a-t-il une seule propriété racine ?
+            if (jsonNode.isObject() && jsonNode.size() == 1) {
+                
+                // 1. Récupérer le nom de la clé 
+                String rootName = jsonNode.fieldNames().next();
+                
+                // 2. Récupérer le contenu de l'enfant
+                JsonNode childNode = jsonNode.get(rootName);
+                
+                
+                xmlOutput = xmlMapper.writerWithDefaultPrettyPrinter()
+                                     .withRootName(rootName) 
+                                     .writeValueAsString(childNode);
+            } else {
+                xmlOutput = xmlMapper.writerWithDefaultPrettyPrinter()
+                                     .withRootName("root")
+                                     .writeValueAsString(jsonNode);
+            }
             
             return ConversionResult.success(xmlOutput);
             
         } catch (Exception e) {
-            return ConversionResult.failure("Erreur Jackson lors de la conversion : " + e.getMessage());
+            return ConversionResult.failure("Erreur conversion : " + e.getMessage());
         }
     }
 }
