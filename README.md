@@ -1,11 +1,12 @@
 # 🔄 XML ↔ JSON Converter
 
+**🎥 Vidéo de démonstration :** https://drive.google.com/file/d/1bmLqdYbH_wBo7ZDzKYwuq5_H64FvkkAs/view?usp=sharing
+
 <div align="center">
 
 ![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-blue?style=for-the-badge&logo=java)
 ![Maven](https://img.shields.io/badge/Maven-3.8+-red?style=for-the-badge&logo=apache-maven)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 Une application de bureau élégante et intuitive pour convertir des documents entre les formats XML et JSON, avec prise en charge de deux méthodes de conversion : Native (Java pur) et Jackson (API).
 
